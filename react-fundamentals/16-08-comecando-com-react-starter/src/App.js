@@ -21,7 +21,10 @@ class App extends Component {
 
   addTask(e) {
     e.preventDefault();
-    const value = e.target.querySelector('input').value;
+    const form = e.target;
+    const input = form.querySelector('input');
+    const value = input.value;
+    input.value = '';
     this.setState(prev => {
       const { items = [] } =prev;
       const newTask = {
